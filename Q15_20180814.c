@@ -28,6 +28,7 @@ void getmaxmin(int *max,int *min,int *data)
         }else if(data[0] < data[i]){
             *max = data[i];
         }
+        
     }
         return;
 }
