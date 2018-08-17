@@ -13,8 +13,8 @@ int main(void)
     fprintf(file,"%d,%s,%d\n",b,name2,scorem);
     fprintf(file,"%d,%s,%d\n",c,name3,scoreg);
     fprintf(file,"%d,%s,%d\n",d,name4,scoreh);
-    /*fscanf(file,"%d,%d",&i,&j);
+    
     fclose(file);
-    printf("i = %d : = %d\n",i,j);*/
+
     return 0;
 }
