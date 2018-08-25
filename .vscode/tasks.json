@@ -8,18 +8,15 @@
            "type": "shell",
            "command": "gcc",
            "args": [
+               "sum.c",
                "${file}",
                "-Werror",
                "-Wextra",
                "-Wall",
                "-g",
                "-O0",
-               "-o sum.c",
+               "-o",
                "${fileBasenameNoExtension}.exe",
-               "-L.",
-               "-I.",
-
-
            ],
            "group": {
                "kind": "build",
