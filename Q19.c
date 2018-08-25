@@ -20,15 +20,23 @@ int main(void)
     data1 = malloc(sizeof(profile)*10);
     if(data1 == NULL){exit(0);}
 
-    while(data1[i-1].age != -1)
-    {
-        pro_scan(&data1[i]);
-        i++;
-        if (i >= datasize) {
-			datasize += 1;
-            data1 = realloc(data1,sizeof(profile)*datasize);
+    do{
+        if(i >= datasize){
+            datasize++;
+            profile *p_;
+            p_ = realloc(data1,sizeof(profile)*datasize);
+
+            if(p_ == NULL){
+                perror("Failed to reallocate profile buffer!");
+                free(data1);
+                exit(1);
+            }
+
+            data1 = p_;
         }
-    }
+        pro_scan(&data1[i]);
+    }while(data1[i++].age != -1);
+    
     for(count = 0;count < i;count++)
     {
        pro_print(data1[count]); 
